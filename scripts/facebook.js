@@ -20,25 +20,25 @@ var request = require('@request/client')
 var purest = require('purest')({request})
 var facebook = purest({provider: 'facebook', config: {
   "facebook": {
-      "https://graph.facebook.com": {
-        "__domain": {
-          "auth": {
-            "auth": {"bearer": "[0]"}
-          }
-        },
-        "[version]/{endpoint}": {
-          "__path": {
-            "alias": "__default",
-            "version": "v2.7"
-          }
-        },
-        "oauth/access_{endpoint}": {
-          "__path": {
-            "alias": "oauth"
-          }
+    "https://graph.facebook.com": {
+      "__domain": {
+        "auth": {
+          "auth": {"bearer": "[0]"}
+        }
+      },
+      "[version]/{endpoint}": {
+        "__path": {
+          "alias": "__default",
+          "version": "v2.7"
+        }
+      },
+      "oauth/access_{endpoint}": {
+        "__path": {
+          "alias": "oauth"
         }
       }
     }
+  }
 }})
 
 var events = []
@@ -79,5 +79,5 @@ var get = (cursor, done) =>
     })
 
 get('', () => {
-  fs.writeFileSync(argv.type + '.json', JSON.stringify(events), 'utf8')
+  fs.writeFileSync('fb-' + argv.type + '.json', JSON.stringify(events), 'utf8')
 })

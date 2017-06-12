@@ -2,22 +2,22 @@
 # varnalab.org
 
 ```bash
-# events.json
-mongoexport --db varnalab-production --collection events --jsonArray --out events.json
-# articles.json
-mongoexport --db varnalab-production --collection blogposts --jsonArray --out articles.json
+# org-events.json
+mongoexport --db varnalab-production --collection events --jsonArray --out org-events.json
+# org-articles.json
+mongoexport --db varnalab-production --collection blogposts --jsonArray --out org-articles.json
 ```
 
 # facebook
 
 ```bash
-# group.json
+# fb-group.json
 node scripts/facebook.js --config /path/to/config.json --type group
-# page.json
+# fb-page.json
 node scripts/facebook.js --config /path/to/config.json --type page
 ```
 
-## config.json
+### config.json
 
 ```json
 {
@@ -28,3 +28,7 @@ node scripts/facebook.js --config /path/to/config.json --type page
   }
 }
 ```
+
+# finance
+
+https://docs.google.com/spreadsheets/d/14z48BCI1EKQvvtBV47PRq9I3r9lVL5IQbdTsKXcf25w/pub
